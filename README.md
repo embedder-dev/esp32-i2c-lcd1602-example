@@ -12,21 +12,20 @@ This application is also usable with an LCD2004 module (20 columns, 4 rows), by 
 
 It is written and tested for v3.3 of the [ESP-IDF](https://github.com/espressif/esp-idf) environment, using the xtensa-esp32-elf toolchain (gcc version 5.2.0).
 
-Ensure that submodules are cloned:
-
-    $ git clone --recursive https://github.com/DavidAntliff/esp32-i2c-lcd1602-example.git
-
 Build the application with:
 
     $ cd esp32-i2c-lcd1602-example.git
-    $ idf.py menuconfig    # set your serial configuration and the I2C GPIO - see below
-    $ idf.py build
-    $ idf.py -p (PORT) flash monitor
+    $ idf.py menuconfig    # skip if not using hardware, set your serial configuration and the I2C GPIO - see below
+    $ idf.py build # mandatory step
+    $ idf.py -p (PORT) flash monitor # only if you have the hardware connected
 
 The program should detect your connected device and display some demonstration text on the LCD.
 
 ## Dependencies
 
+The components have been copied from a stable commit and we are no longer tracking submodules.
+
+### Deprecated Information
 This application makes use of the following components (included as submodules):
 
  * components/[esp32-smbus](https://github.com/DavidAntliff/esp32-smbus)
