@@ -1,0 +1,18 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4c841b4..f340118 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,7 +1,5 @@
+-# For IDF v4.x:
+-#idf_component_register(SRCS "smbus.c" INCLUDE_DIRS include)
+-
+-set(COMPONENT_ADD_INCLUDEDIRS include)
+-set(COMPONENT_SRCS "smbus.c")
+-set(COMPONENT_REQUIRES "driver")
+-register_component()
++idf_component_register(
++    SRCS "smbus.c"  # list your .c files
++    INCLUDE_DIRS "include"
++    REQUIRES driver
++)
+\ No newline at end of file

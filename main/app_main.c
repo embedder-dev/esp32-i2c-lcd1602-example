@@ -88,8 +88,8 @@ static uint8_t _wait_for_user(void)
 #ifdef USE_STDIN
     while (!c)
     {
-       STATUS s = uart_rx_one_char(&c);
-       if (s == OK) {
+       ETS_STATUS s = uart_rx_one_char(&c);
+       if (s == ETS_OK) {
           printf("%c", c);
        }
        vTaskDelay(1);
